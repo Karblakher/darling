@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desbloquear Imagen</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        #image {
+            display: none;
+            margin-top: 20px;
+        }
+        #errorMessage {
+            color: red;
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ingresa el código para desbloquear la imagen</h1>
+        <input type="text" id="code" placeholder="Código de acceso">
+        <button onclick="checkCode()">Desbloquear</button>
+        <p id="errorMessage">NO MERGIO DARLING</p>
+        <img id="image" src="https://i.imgur.com/1DdhMK0.jpeg" alt="Mapa" width="500">
+    </div>
+
+    <script>
+        function checkCode() {
+            var enteredCode = document.getElementById("code").value;
+            var correctCode = "3275464";
+            var image = document.getElementById("image");
+            var errorMessage = document.getElementById("errorMessage");
+
+            if (enteredCode === correctCode) {
+                image.style.display = "block"; // Mostrar la imagen
+                errorMessage.style.display = "none"; // Ocultar el mensaje de error
+            } else {
+                image.style.display = "none"; // Ocultar la imagen
+                errorMessage.style.display = "block"; // Mostrar el mensaje de error
+            }
+        }
+    </script>
+</body>
+</html>
